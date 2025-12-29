@@ -1,6 +1,6 @@
 <?php
 
-namespace Jxm\Tool\Helper\Tree;
+namespace Yuxing\Tool\Helper\Tree;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Jxm\Tool\TencentCloud;
+namespace Yuxing\Tool\TencentCloud;
 
 
 class QCloudSTS

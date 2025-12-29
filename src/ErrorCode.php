@@ -1,6 +1,6 @@
 <?php
 
-namespace Jxm\Tool;
+namespace Yuxing\Tool;
 
 /**
  * @method static static OptionOne()

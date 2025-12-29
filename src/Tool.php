@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Jxm\Tool;
+namespace Yuxing\Tool;
 
 use Jxm\Tool\ErrorCode;
 use Illuminate\Http\Request;
