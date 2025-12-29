@@ -12,7 +12,7 @@ trait TreeModel
 {
     public $key_parent = 'parent_id';
     public $key_name = 'name';
-    public $key_path = 'path';
+    public $key_path = 'parent_path';
 
     #region Relations
     public function parent(): BelongsTo
