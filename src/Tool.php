@@ -3,10 +3,8 @@
 
 namespace Yuxing\Tool;
 
-use Jxm\Tool\ErrorCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 
 class Tool
 {

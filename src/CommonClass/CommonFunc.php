@@ -51,25 +51,15 @@ function routeModuleHelper(string $module, string $controller, $type = 1)
 /**
  * 匹配App/Http接口路由
  * @param $controller 控制器名，不带controller
- * @param bool $is_api 是否API调用接口
  * @param int $type 1,普通api接口，2，hprose服务
  */
-function routeHelper($controller, $is_api = false, $type = 1)
+function routeHelper($controller, $type = 1)
 {
     if ($type == 1) {
-        $files = scandir(base_path() . '/app/Http/Controllers' . ($is_api ? '/Api' : ''));
+        $files = scandir(base_path() . '/app/Http/Controllers');
         foreach ($files as $file) {
             if (strtolower($file) == (strtolower($controller) . 'controller.php')) {
-                $class = 'App\\Http\\Controllers\\' . ($is_api ? 'Api\\' : '') . $file;
-                //echo $class;
-                break;
-            }
-        }
-    } elseif ($type == 2) {
-        $files = scandir(base_path() . '/app/Http/Services');
-        foreach ($files as $file) {
-            if (strtolower($file) == (strtolower($controller) . 'service.php')) {
-                $class = 'App\\Http\\Services\\' . $file;
+                $class = 'App\\Http\\Controllers\\' . $file;
                 //echo $class;
                 break;
             }
