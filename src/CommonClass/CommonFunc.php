@@ -16,28 +16,11 @@ function routeModuleHelper(string $module, string $controller, $type = 1)
         }
     }
     if ($type == 1) {
-        $files = scandir(base_path() . '/Modules/' . $module . '/Http/Controllers');
+        $files = scandir(base_path() . '/Modules/' . $module . '/app/Http/Controllers');
         foreach ($files as $file) {
             if (strtolower($file) == (strtolower($controller) . 'controller.php')) {
                 $class = 'Modules\\' . $module . '\\Http\\Controllers\\' . $file;
                 //echo $class;
-                break;
-            }
-        }
-    } elseif ($type == 2) {
-        $files = scandir(base_path() . '/Modules/' . $module . '/Services');
-        foreach ($files as $file) {
-            if (strtolower($file) == (strtolower($controller) . 'service.php')) {
-                $class = 'Modules\\' . $module . '\\Services\\' . $file;
-                //echo $class;
-                break;
-            }
-        }
-    } elseif ($type == 3) {
-        $files = scandir(base_path() . '/Modules/' . $module . '/Http/Controllers/App');
-        foreach ($files as $file) {
-            if (strtolower($file) == (strtolower($controller) . 'controller.php')) {
-                $class = 'Modules\\' . $module . '\\Http\\Controllers\\App\\' . $file;
                 break;
             }
         }
