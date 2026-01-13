@@ -14,30 +14,25 @@ class Tool
     /**
      * Notes: 格式化返回结果
      * User: harden - 2021/8/24 下午6:21
-     * @param Request $request
-     * @param bool|array|null $result 结果数据
+     * @param bool|array|null $data 结果数据data
      * @param int $code 结果状态码
      * @param string $msg 消息
      * @param int $type 返回类型 1:object,2:array,3:json,4:xml
      * @return false|mixed|string
      */
-    public static function formatOutput(Request $request, $result, $code = ErrorCode::ERR_OK, $msg = '操作成功', $type = 3)
+    public static function formatOutput($data, $code = ErrorCode::ERR_OK, $msg = '操作成功', $type = 3)
     {
-        if (is_bool($result)) {
-            $result = [
-                'code' => $result ? 0 : ErrorCode::ERR_UNKNOW,
-                'msg' => $result ? '操作成功' : '操作失败',
-            ];
-        } elseif (is_null($result)) {
-            $result = [
-                'code' => 0,
-                'msg' => '操作成功',
-            ];
+        if (is_bool($data)) {
+            $code = $code ?: ($data ? 0 : ErrorCode::ERR_UNKNOW);
+            $msg = $data ? '操作成功' : '操作失败';
         }
-        if (Arr::has($result, 'code')) {
-            $code = $result['code'];
-        }
-        return self::commonDataInput($code, $result, $type, Arr::has($result, 'msg') ? $result['msg'] : $msg);
+//        elseif (is_null($data)) {
+//            $code = ErrorCode::ERR_OK;
+//        }
+//        if (Arr::has($data, 'code')) {
+//            $code = $data['code'];
+//        }
+        return self::commonDataInput($code, $data, $type, $msg);
     }
 
 
