@@ -14,7 +14,7 @@ class Tool
     /**
      * Notes: 格式化返回结果
      * User: harden - 2021/8/24 下午6:21
-     * @param bool|array|null $data 结果数据data
+     * @param mixed $data 结果数据data
      * @param int $code 结果状态码
      * @param string $msg 消息
      * @param int $type 返回类型 1:object,2:array,3:json,4:xml
